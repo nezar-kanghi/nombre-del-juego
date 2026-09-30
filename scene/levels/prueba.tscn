@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvy8eys3p0f5c"]
+
+[ext_resource type="Texture2D" uid="uid://d0e2i3xagxnr7" path="res://assets/sprites/skill-desc_0003_bg.png" id="1_y0x4r"]
+[ext_resource type="Texture2D" uid="uid://c3hri17ifykg" path="res://assets/sprites/skill-desc_0002_far-buildings.png" id="2_5vph2"]
+[ext_resource type="Texture2D" uid="uid://bkc7apiudoks7" path="res://assets/sprites/skill-desc_0001_buildings.png" id="3_mbefb"]
+[ext_resource type="Texture2D" uid="uid://dnnj5yxltnism" path="res://assets/sprites/skill-desc_0000_foreground.png" id="4_xle8g"]
+
+[node name="Prueba" type="Node2D" unique_id=1031031430]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=412965315]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=427851085]
+texture = ExtResource("1_y0x4r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1826074453]
+texture = ExtResource("2_5vph2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2133757859]
+texture = ExtResource("3_mbefb")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=514246061]
+texture = ExtResource("4_xle8g")
