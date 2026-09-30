@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="juego_de_nezar"
-run/main_scene="uid://d33j1asjrnwch"
+run/main_scene="uid://dvy8eys3p0f5c"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
