@@ -4,6 +4,48 @@
 [ext_resource type="Texture2D" uid="uid://c3hri17ifykg" path="res://assets/sprites/skill-desc_0002_far-buildings.png" id="2_5vph2"]
 [ext_resource type="Texture2D" uid="uid://bkc7apiudoks7" path="res://assets/sprites/skill-desc_0001_buildings.png" id="3_mbefb"]
 [ext_resource type="Texture2D" uid="uid://dnnj5yxltnism" path="res://assets/sprites/skill-desc_0000_foreground.png" id="4_xle8g"]
+[ext_resource type="Script" uid="uid://cyk6c1jjfyiii" path="res://scripts/sprite_2d_4.gd" id="5_5vph2"]
+[ext_resource type="Texture2D" uid="uid://bbe7ge011nycx" path="res://assets/sprites/howl.png" id="6_mbefb"]
+[ext_resource type="Script" uid="uid://dtcgkq46k3v4d" path="res://scene/levels/sprite_2d_7.gd" id="7_xle8g"]
+
+[sub_resource type="GDScript" id="GDScript_mbefb"]
+script/source = "extends Sprite2D
+
+var speed = 400
+var angular_speed = PI
+
+
+func _process(delta):
+	rotation += angular_speed * delta
+
+	var velocity = Vector2.UP.rotated(rotation) * speed
+
+	position += velocity * delta
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_xle8g"]
+script/source = "extends Sprite2D
+
+var speed = 400
+var angular_speed = PI
+
+
+func _process(delta):
+	var direction = 0
+	if Input.is_action_pressed(\"move_left\"):
+		direction = 1
+	if Input.is_action_pressed(\"move_right\"):
+		direction = -1
+
+	rotation += angular_speed * direction * delta
+
+	var velocity = Vector2.ZERO
+	if Input.is_action_pressed(\"jump\"):
+		velocity = Vector2.UP.rotated(rotation) * speed
+
+	position += velocity * delta
+"
 
 [node name="Prueba" type="Node2D" unique_id=1031031430]
 
@@ -28,3 +70,34 @@ texture = ExtResource("3_mbefb")
 position = Vector2(1.5, -0.50001526)
 scale = Vector2(4.2389703, 6.2211537)
 texture = ExtResource("4_xle8g")
+script = ExtResource("5_5vph2")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1626994459]
+position = Vector2(0.99993896, -4.9999847)
+scale = Vector2(4.40625, 3.765625)
+skew = 0.37175512
+texture = ExtResource("6_mbefb")
+script = SubResource("GDScript_mbefb")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1514760411]
+position = Vector2(-37.00003, 200)
+scale = Vector2(2.15625, 2.25)
+texture = ExtResource("6_mbefb")
+script = SubResource("GDScript_xle8g")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1744504219]
+position = Vector2(303, 152)
+scale = Vector2(3.515625, 3.328125)
+texture = ExtResource("6_mbefb")
+script = ExtResource("7_xle8g")
+
+[node name="Timer" type="Timer" parent="Sprite2D7" unique_id=625379435]
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=33917610]
+offset_left = 190.0
+offset_top = 117.0
+offset_right = 414.0
+offset_bottom = 264.0
+
+[connection signal="pressed" from="Button" to="Sprite2D7" method="_on_button_pressed"]
