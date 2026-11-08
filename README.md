@@ -1,4 +1,2 @@
-Tenemos un fondo con una ciudad muy bonita
-Principalmente de color verde en la que futuramente habra que realizar
-un ataque
-cuenta con 4 sprites
+Actualmente el juego con un botón de PLAY
+el cual te lleva directamente al tutorial en donde se te explicaran las mecanicas principales del juego.
