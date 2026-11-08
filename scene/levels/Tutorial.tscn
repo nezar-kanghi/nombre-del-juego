@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d2bqwqoms28cg"]
+
+[ext_resource type="Script" uid="uid://dtrncdpblbdrc" path="res://scene/levels/tutorial.gd" id="1_l0hju"]
+[ext_resource type="PackedScene" uid="uid://dhyd18hnt57sg" path="res://scene/player/Player.tscn" id="2_brjgk"]
+[ext_resource type="PackedScene" uid="uid://c6wbd8ocpypus" path="res://scene/player/Enemy.tscn" id="2_uut03"]
+[ext_resource type="Texture2D" uid="uid://cgu21juspo1gf" path="res://assets/sprites/bosque_inicial (1).png" id="4_uut03"]
+
+[node name="Tutorial" type="Node2D" unique_id=523420257]
+script = ExtResource("1_l0hju")
+enemy_scene = ExtResource("2_uut03")
+
+[node name="Fondo" type="CanvasLayer" parent="." unique_id=279004627]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Fondo" unique_id=1932552311]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." unique_id=751131406 instance=ExtResource("2_brjgk")]
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=528866144]
+position = Vector2(700, 0)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=481936171]
+
+[node name="Label" type="Label" parent="UI" unique_id=590800367]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Hola"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1551834692]
+
+[node name="Suelo" type="Sprite2D" parent="." unique_id=56813154]
+z_index = -1
+texture_filter = 1
+scale = Vector2(2.08, 1.18)
+texture = ExtResource("4_uut03")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1217247340]
+color = Color(0.050980393, 0.050980393, 0.101960786, 1)

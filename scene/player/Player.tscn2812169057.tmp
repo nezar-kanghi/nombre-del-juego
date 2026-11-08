@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhyd18hnt57sg"]
+
+[ext_resource type="Script" uid="uid://cymp384e27fwe" path="res://scene/player/player.gd" id="1_qt1gw"]
+[ext_resource type="PackedScene" uid="uid://cv3c82h356q8i" path="res://scene/player/Misil.tscn" id="2_rvvvr"]
+[ext_resource type="PackedScene" uid="uid://bmhc266wuci2m" path="res://scene/player/ulti.tscn" id="2_sw8x8"]
+[ext_resource type="Texture2D" uid="uid://c7f630cygedx" path="res://assets/sprites/New Piskel.png" id="3_rvvvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u4tv"]
+size = Vector2(131, 83)
+
+[node name="Player" type="CharacterBody2D" unique_id=751131406]
+script = ExtResource("1_qt1gw")
+missile_scene = ExtResource("2_rvvvr")
+ulti_scene = ExtResource("2_sw8x8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1307483868]
+texture_filter = 1
+texture = ExtResource("3_rvvvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=391934251]
+shape = SubResource("RectangleShape2D_6u4tv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=518980024]

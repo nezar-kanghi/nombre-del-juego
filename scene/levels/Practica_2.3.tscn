@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bg2o3tg03210x"]
+
+[ext_resource type="Texture2D" uid="uid://cgu21juspo1gf" path="res://assets/sprites/bosque_inicial (1).png" id="1_5hq47"]
+
+[node name="Practica2_3" type="Node2D" unique_id=1111833655]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=793967347]
+
+[node name="BosqueInicial(1)" type="Sprite2D" parent="." unique_id=1537074142]
+position = Vector2(576, 327.00003)
+scale = Vector2(2.0836365, 1.1781819)
+texture = ExtResource("1_5hq47")

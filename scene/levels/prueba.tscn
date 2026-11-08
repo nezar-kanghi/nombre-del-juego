@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dvy8eys3p0f5c"]
 
-[ext_resource type="Texture2D" uid="uid://d0e2i3xagxnr7" path="res://assets/sprites/skill-desc_0003_bg.png" id="1_y0x4r"]
-[ext_resource type="Texture2D" uid="uid://c3hri17ifykg" path="res://assets/sprites/skill-desc_0002_far-buildings.png" id="2_5vph2"]
-[ext_resource type="Texture2D" uid="uid://bkc7apiudoks7" path="res://assets/sprites/skill-desc_0001_buildings.png" id="3_mbefb"]
-[ext_resource type="Texture2D" uid="uid://dnnj5yxltnism" path="res://assets/sprites/skill-desc_0000_foreground.png" id="4_xle8g"]
-[ext_resource type="Script" uid="uid://cyk6c1jjfyiii" path="res://scripts/sprite_2d_4.gd" id="5_5vph2"]
-[ext_resource type="Texture2D" uid="uid://bbe7ge011nycx" path="res://assets/sprites/howl.png" id="6_mbefb"]
+[ext_resource type="Script" uid="uid://c4s7ulac1cf7m" path="res://scene/levels/pantalla_completa.gd" id="1_y0x4r"]
+[ext_resource type="Texture2D" uid="uid://cw1r3gv8xxx6m" path="res://assets/sprites/Fondo_inicio.png" id="2_5vph2"]
+[ext_resource type="Texture2D" uid="uid://dqnsmqgt7bfnw" path="res://assets/sprites/Enemigo1.png" id="5_mbefb"]
+[ext_resource type="Texture2D" uid="uid://cgcsf3qd5nsrh" path="res://assets/sprites/Rallo_principal.png" id="6_xle8g"]
+[ext_resource type="Texture2D" uid="uid://c7f630cygedx" path="res://assets/sprites/New Piskel.png" id="7_86y4v"]
+[ext_resource type="Texture2D" uid="uid://ccqsww6nqfg5k" path="res://assets/sprites/Rallo_principal_gif.png" id="7_x6hm3"]
 [ext_resource type="Script" uid="uid://dtcgkq46k3v4d" path="res://scene/levels/sprite_2d_7.gd" id="7_xle8g"]
 
 [sub_resource type="GDScript" id="GDScript_mbefb"]
@@ -47,48 +47,108 @@ func _process(delta):
 	position += velocity * delta
 "
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hgcm"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(0, 0, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muwus"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(2176, 0, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a37qm"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(0, 1326, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74sm4"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(2176, 1326, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru4q2"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(0, 2652, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkl7i"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(2176, 2652, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdm3f"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(0, 3978, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v315"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(2176, 3978, 2176, 1326)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aadjo"]
+atlas = ExtResource("7_x6hm3")
+region = Rect2(0, 5304, 2176, 1326)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6u4tv"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hgcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muwus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a37qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74sm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru4q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkl7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdm3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v315")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aadjo")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="Prueba" type="Node2D" unique_id=1031031430]
+script = ExtResource("1_y0x4r")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=412965315]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=427851085]
-position = Vector2(-0.5, -2.9999847)
-scale = Vector2(4.2242646, 4.0375)
-texture = ExtResource("1_y0x4r")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1826074453]
-position = Vector2(0.49998474, 1.0000305)
-scale = Vector2(5.4037557, 4.535211)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711458503]
+texture_filter = 1
+scale = Vector2(6, 6)
 texture = ExtResource("2_5vph2")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2133757859]
-position = Vector2(0.49995422, -0.9999924)
-scale = Vector2(4.224265, 4.306667)
-texture = ExtResource("3_mbefb")
-
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=514246061]
-position = Vector2(1.5, -0.50001526)
-scale = Vector2(4.2389703, 6.2211537)
-texture = ExtResource("4_xle8g")
-script = ExtResource("5_5vph2")
-
 [node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1626994459]
-position = Vector2(0.99993896, -4.9999847)
-scale = Vector2(4.40625, 3.765625)
-skew = 0.37175512
-texture = ExtResource("6_mbefb")
+position = Vector2(-176, 31)
+scale = Vector2(1.093, 1)
+texture = ExtResource("7_86y4v")
 script = SubResource("GDScript_mbefb")
 
 [node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1514760411]
-position = Vector2(-37.00003, 200)
-scale = Vector2(2.15625, 2.25)
-texture = ExtResource("6_mbefb")
+position = Vector2(5, -214)
+scale = Vector2(0.82, 0.801)
+texture = ExtResource("7_86y4v")
 script = SubResource("GDScript_xle8g")
 
 [node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1744504219]
-position = Vector2(303, 152)
-scale = Vector2(3.515625, 3.328125)
-texture = ExtResource("6_mbefb")
+position = Vector2(316, 233.00003)
+scale = Vector2(1.073, 1)
+texture = ExtResource("7_86y4v")
 script = ExtResource("7_xle8g")
 
 [node name="Timer" type="Timer" parent="Sprite2D7" unique_id=625379435]
@@ -99,5 +159,27 @@ offset_left = 190.0
 offset_top = 117.0
 offset_right = 414.0
 offset_bottom = 264.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=531698450]
+position = Vector2(496, 17)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_mbefb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=375133176]
+texture_filter = 1
+position = Vector2(89.000015, 19)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_xle8g")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1094641802]
+position = Vector2(-744, 81)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=149674466]
+texture_filter = 1
+position = Vector2(-107.99999, -142.99998)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_6u4tv")
+animation = &"new_animation"
 
 [connection signal="pressed" from="Button" to="Sprite2D7" method="_on_button_pressed"]

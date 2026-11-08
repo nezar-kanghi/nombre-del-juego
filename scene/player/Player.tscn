@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dhyd18hnt57sg"]
+
+[ext_resource type="Script" uid="uid://cymp384e27fwe" path="res://scene/player/player.gd" id="1_qt1gw"]
+[ext_resource type="PackedScene" uid="uid://cv3c82h356q8i" path="res://scene/player/Misil.tscn" id="2_rvvvr"]
+[ext_resource type="PackedScene" uid="uid://bmhc266wuci2m" path="res://scene/player/ulti.tscn" id="2_sw8x8"]
+[ext_resource type="Texture2D" uid="uid://c7f630cygedx" path="res://assets/sprites/New Piskel.png" id="3_rvvvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u4tv"]
+size = Vector2(131, 83)
+
+[sub_resource type="Gradient" id="Gradient_sw8x8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8w0r3"]
+gradient = SubResource("Gradient_sw8x8")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Player" type="CharacterBody2D" unique_id=751131406]
+script = ExtResource("1_qt1gw")
+missile_scene = ExtResource("2_rvvvr")
+ulti_scene = ExtResource("2_sw8x8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1307483868]
+texture_filter = 1
+texture = ExtResource("3_rvvvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=391934251]
+shape = SubResource("RectangleShape2D_6u4tv")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=251082017]
+position = Vector2(-7, -20)
+
+[node name="Light" type="PointLight2D" parent="." unique_id=1947783234]
+texture = SubResource("GradientTexture2D_8w0r3")

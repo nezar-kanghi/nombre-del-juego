@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://6qoymlnm5ck6"]
+
+[ext_resource type="Script" uid="uid://d08kulhwt73we" path="res://scene/ui/main_menu.gd" id="1_sifqn"]
+[ext_resource type="Texture2D" uid="uid://cw1r3gv8xxx6m" path="res://assets/sprites/Fondo_inicio.png" id="2_xp3lh"]
+[ext_resource type="Texture2D" uid="uid://djo5t15q4ypr" path="res://assets/sprites/Boton_Play.png" id="3_irx8h"]
+[ext_resource type="Texture2D" uid="uid://c7f630cygedx" path="res://assets/sprites/New Piskel.png" id="4_r27y4"]
+
+[node name="MainMenu" type="Control" unique_id=1806498713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sifqn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1081655401]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xp3lh")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1274559488]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="TextureButton" parent="CenterContainer" unique_id=1704130077]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+texture_normal = ExtResource("3_irx8h")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771959965]
+texture_filter = 1
+position = Vector2(624, 123)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_r27y4")
+
+[connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]
